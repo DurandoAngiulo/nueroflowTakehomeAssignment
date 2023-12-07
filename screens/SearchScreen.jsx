@@ -3,7 +3,6 @@ import { useAuthRequest } from "expo-auth-session";
 import {
   View,
   TextInput,
-  Button,
   FlatList,
   TouchableOpacity,
   Text,
@@ -44,6 +43,7 @@ const SearchScreen = ({ navigation }) => {
       headerShown: false,
     });
   }, [nav]);
+
   //Authentication on load
   useEffect(() => {
     const authenticateOnLoad = async () => {
@@ -118,6 +118,7 @@ const SearchScreen = ({ navigation }) => {
 
     fetchData();
   }, [accessToken, isTokenExpired, query]);
+
   //Token refresh if expired
   const refreshToken = async () => {
     try {
